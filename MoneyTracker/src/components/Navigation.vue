@@ -1,7 +1,11 @@
 <script setup>
-import { ref } from "vue";
+import { ref, defineProps } from "vue";
 import { useRouter } from "vue-router";
 import Swal from "sweetalert2";
+
+const props = defineProps({
+  backgroundColor: { type: String, default: "#343a40" }, // Props za boju navigacije
+});
 
 const role = ref(localStorage.getItem("role"));
 const router = useRouter();
@@ -28,13 +32,14 @@ const logout = () => {
 <template>
   <nav
     class="navbar navbar-expand-lg navbar-light"
-    style="background-color: #343a40"
+    :style="{ backgroundColor: props.backgroundColor }"
   >
     <img
       src="../assets/konacanlogo2.png"
       alt="Finance Logo"
       class="logo img-fluid"
     />
+    <h3 class="text-white">{{ props.naslov }}</h3>
     <button
       class="navbar-toggler"
       type="button"

@@ -73,7 +73,7 @@ onMounted(() => {
 </script>
 <template>
   <div>
-    <Navigation />
+    <Navigation backgroundColor="#415256" />
 
     <div
       style="background-color: #f1f3f5; position: relative; padding-top: 50px"
